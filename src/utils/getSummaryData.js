@@ -3,10 +3,12 @@ const getSummaryData = (dogsData) => {
 
   Object.values(dogsData).forEach((value) => {
     if (summaryData[value.breed] === undefined) {
-      return (summaryData[value.breed] = 1);
+      summaryData[value.breed] = { count: 1, likes: 0 };
+
+      return;
     }
 
-    summaryData[value.breed] += 1;
+    summaryData[value.breed].count += +1;
   });
 
   return summaryData;

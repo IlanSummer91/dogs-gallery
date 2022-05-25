@@ -3,17 +3,26 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  padding: 20px;
+  padding-top: 10px;
+  align-items: center;
   font-size: clamp(16px, 1.5vw, 24px);
   font-family: Arial, Helvetica, sans-serif;
-  gap: 10px;
+  gap: 5px;
+  flex-direction: column;
 `;
 
-const SummaryRow = ({ breed, likes }) => {
+const Breed = styled.div`
+  align-self: flex-start;
+  padding-left: 15px;
+  font-weight: 600;
+`;
+
+const SummaryRow = ({ breed, count, likes }) => {
   return (
     <Container>
-      <div>{breed}:</div>
-      <div>{likes}</div>
+      <Breed>{breed}</Breed>
+      <div>Count: {count}</div>
+      <div>Likes: {likes}</div>
     </Container>
   );
 };

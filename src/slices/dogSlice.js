@@ -17,7 +17,7 @@ export const dogSlice = createSlice({
     },
     updateLikes: (state, action) => {
       state.dogsData[action.payload.id].likes += 1;
-      state.summaryData[action.payload.breed] += 1;
+      state.summaryData[action.payload.breed].likes += 1;
     },
   },
 });

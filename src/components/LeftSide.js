@@ -12,8 +12,13 @@ const LeftSide = () => {
 
   return (
     <Container>
-      {Object.entries(dogSlice.summaryData).map(([breed, likes]) => (
-        <SummaryRow breed={breed} likes={likes} />
+      {Object.entries(dogSlice.summaryData).map(([breed, info], index) => (
+        <SummaryRow
+          breed={breed}
+          count={info.count}
+          likes={info.likes}
+          key={index}
+        />
       ))}
     </Container>
   );
